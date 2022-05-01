@@ -10,7 +10,7 @@
             @foreach($heads as $th)
                 <th @isset($th['width']) style="width:{{ $th['width'] }}%" @endisset
                     @isset($th['no-export']) dt-no-export @endisset>
-                    {{ is_array($th) ? ($th['label'] ?? '') : $th }}
+                    {{ __('headers.' . (is_array($th) ? ($th['label'] ?? '') : $th)) }}
                 </th>
             @endforeach
         </tr>
@@ -38,6 +38,16 @@
 
 @push('js')
 <script>
+
+    @php
+        $config = array_merge($config,
+            [
+                'language' => [
+                    'url' => "https://cdn.datatables.net/plug-ins/1.10.21/i18n/Spanish.json"
+                ]
+            ]
+        );
+    @endphp
 
     $(() => {
         $('#{{ $id }}').DataTable( @json($config) );

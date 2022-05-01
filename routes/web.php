@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\UserController as AdminUserController;
 
 // restablecer la contraseña (ingresa mail para enviar token)
 // Route::get('/email', function () { return view('adminlte::auth.passwords.email'); });
@@ -15,6 +16,12 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/', function () {
         return view('adminlte::page');
+    });
+
+    Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+
+        Route::get('/users', [AdminUserController::class, 'index'])->name('users.index');
+
     });
 
 });
