@@ -37,6 +37,8 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
 
         Fortify::loginView(fn () => view('auth.login'));
+        Fortify::requestPasswordResetLinkView(fn () => view('auth.passwords.email')); // url: forgot-password
+        Fortify::resetPasswordView(fn () => view('auth.passwords.reset')); // url: reset-password/{token}?email=
         Fortify::registerView(fn () => view('auth.register'));
 
         RateLimiter::for('login', function (Request $request) {
