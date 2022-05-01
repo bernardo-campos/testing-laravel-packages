@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('adminlte::page');
+Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('/', function () {
+        return view('adminlte::page');
+    });
+
 });
