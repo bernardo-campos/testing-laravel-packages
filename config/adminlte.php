@@ -238,6 +238,11 @@ return [
             'route' => 'admin.users.index',
             'icon'  => 'fas fa-fw fa-users',
         ],
+        [
+            'text'  => 'tinker',
+            'url'   => 'admin/tinker',
+            'can'   => 'viewWebTinker'
+        ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
