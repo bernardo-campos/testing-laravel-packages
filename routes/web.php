@@ -12,6 +12,8 @@ use App\Http\Controllers\Admin\UserController as AdminUserController;
 // token - establcer nueva contraseña
 // Route::get('/reset', function () { return view('adminlte::auth.passwords.reset')->with('token', 'asd'); });
 
+Route::mailPreview();
+
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/', function () {
