@@ -28,5 +28,9 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('viewWebTinker', function ($user = null) {
             return optional($user)->hasRole('admin');
         });
+
+        Gate::define('viewSentMails', function ($user = null) {
+            return optional($user)->hasRole('admin');
+        });
     }
 }

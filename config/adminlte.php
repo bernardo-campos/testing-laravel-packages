@@ -243,6 +243,11 @@ return [
             'url'   => 'admin/tinker',
             'can'   => 'viewWebTinker'
         ],
+        [
+            'text'  => 'Sent Emails',
+            'url'   => 'admin/sentemails',
+            'can'   => 'viewSentMails'
+        ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
