@@ -248,6 +248,15 @@ return [
             'url'   => 'admin/sentemails',
             'can'   => 'viewSentMails'
         ],
+        ['header' => 'MODELS'],
+        [
+            'text'  => 'Authors',
+            'route' => 'authors.index',
+        ],
+        [
+            'text'  => 'Books',
+            'route' => 'books.index',
+        ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',

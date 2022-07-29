@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use Database\Seeders\AuthorSeeder;
+use Database\Seeders\BookSeeder;
 use Database\Seeders\RoleSeeder;
 use Database\Seeders\UserSeeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -19,6 +21,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RoleSeeder::class,
             UserSeeder::class,
+            AuthorSeeder::class,
+            BookSeeder::class,
         ]);
     }
 }
