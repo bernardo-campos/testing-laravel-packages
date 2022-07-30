@@ -21,7 +21,7 @@ class CreateSentEmailsTable extends Migration
             $table->text('cc')->nullable();
             $table->text('bcc')->nullable();
             $table->string('subject')->nullable();
-            $table->text('body');
+            $table->text('body')->nullable();
             $table->timestamps();
         });
     }
