@@ -2,18 +2,14 @@
 
 namespace App\Policies;
 
-use App\Models\Author;
+use App\Models\Book;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class AuthorPolicy
+class BookPolicy
 {
     use HandlesAuthorization;
 
-    public function viewBooks(User $user, Author $author)
-    {
-        return true;
-    }
     /**
      * Determine whether the user can view any models.
      *
@@ -29,13 +25,12 @@ class AuthorPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Author  $author
+     * @param  \App\Models\Book  $book
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Author $author)
+    public function view(User $user, Book $book)
     {
         return true;
-        //
     }
 
     /**
@@ -53,10 +48,10 @@ class AuthorPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Author  $author
+     * @param  \App\Models\Book  $book
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Author $author)
+    public function update(User $user, Book $book)
     {
         //
     }
@@ -65,10 +60,10 @@ class AuthorPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Author  $author
+     * @param  \App\Models\Book  $book
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Author $author)
+    public function delete(User $user, Book $book)
     {
         //
     }
@@ -77,10 +72,10 @@ class AuthorPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Author  $author
+     * @param  \App\Models\Book  $book
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, Author $author)
+    public function restore(User $user, Book $book)
     {
         //
     }
@@ -89,10 +84,10 @@ class AuthorPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Author  $author
+     * @param  \App\Models\Book  $book
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, Author $author)
+    public function forceDelete(User $user, Book $book)
     {
         //
     }

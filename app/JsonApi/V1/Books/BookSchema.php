@@ -1,18 +1,18 @@
 <?php
 
-namespace App\JsonApi\V1\Authors;
+namespace App\JsonApi\V1\Books;
 
-use App\Models\Author;
+use App\Models\Book;
 use LaravelJsonApi\Eloquent\Contracts\Paginator;
 use LaravelJsonApi\Eloquent\Fields\DateTime;
 use LaravelJsonApi\Eloquent\Fields\ID;
+use LaravelJsonApi\Eloquent\Fields\Relations\BelongsTo;
 use LaravelJsonApi\Eloquent\Fields\Str;
-use LaravelJsonApi\Eloquent\Fields\Relations\HasMany;
 use LaravelJsonApi\Eloquent\Filters\WhereIdIn;
 use LaravelJsonApi\Eloquent\Pagination\PagePagination;
 use LaravelJsonApi\Eloquent\Schema;
 
-class AuthorSchema extends Schema
+class BookSchema extends Schema
 {
 
     /**
@@ -20,7 +20,7 @@ class AuthorSchema extends Schema
      *
      * @var string
      */
-    public static string $model = Author::class;
+    public static string $model = Book::class;
 
     /**
      * Get the resource fields.
@@ -34,7 +34,7 @@ class AuthorSchema extends Schema
             Str::make('name')->sortable(),
             DateTime::make('createdAt')->sortable()->readOnly(),
             DateTime::make('updatedAt')->sortable()->readOnly(),
-            HasMany::make('books')->readOnly(),
+            BelongsTo::make('author')->readOnly(),
         ];
     }
 

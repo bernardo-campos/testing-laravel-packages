@@ -15,5 +15,16 @@ Route::get('/authors', [AuthorController::class, 'index'])->name('authors.index'
 Route::get('/books', [BookController::class, 'index'])->name('books.index');
 
 JsonApiRoute::server('v1')->prefix('v1')->resources(function ($server) {
-    $server->resource('authors', JsonApiController::class)->readOnly();
+
+    $server->resource('authors', JsonApiController::class)
+        ->readOnly()
+        ->relationships(function ($relations) {
+            $relations->hasMany('books')->readOnly();
+        });
+
+    $server->resource('books', JsonApiController::class)
+        ->readOnly()
+        ->relationships(function ($relations) {
+            $relations->hasOne('author')->readOnly();
+    });
 });

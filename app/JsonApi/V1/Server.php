@@ -33,6 +33,7 @@ class Server extends BaseServer
     {
         return [
             Authors\AuthorSchema::class,
+            Books\BookSchema::class,
         ];
     }
 }
