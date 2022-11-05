@@ -8,7 +8,9 @@
     <div class="d-flex">
         <div>
             <h1 class="m-0 text-dark">Authors</h1>
-            <small></small>
+            <small>
+                <a href="{{ route('api.authors.index') }}" target="_blank">{{ route('api.authors.index') }}</a>
+            </small>
         </div>
         <a href="{{ route('authors.create') }}" class="ml-auto">
             <x-adminlte-button label="Nuevo" theme="success" icon="fas fa-plus"/>
