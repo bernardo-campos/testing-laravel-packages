@@ -319,6 +319,16 @@ return [
                 ],
             ],
         ],
+        'iCheck' => [
+            'active' => false,
+            'files' => [
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => 'vendor/icheck-bootstrap/icheck-bootstrap.min.css',
+                ],
+            ],
+        ],
         'Select2' => [
             'active' => false,
             'files' => [
